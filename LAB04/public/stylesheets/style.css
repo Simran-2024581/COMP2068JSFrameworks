@@ -1,0 +1,163 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+/* ========= SOFT AESTHETIC BACKGROUND (Mint + Aqua) ========= */
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: #1e293b;
+  background: linear-gradient(135deg, #e0f7fa, #e6f4ff, #e8fff4, #f0f9ff);
+  background-size: 300% 300%;
+  animation: aestheticBG 22s ease-in-out infinite alternate;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========= NAVBAR (Glass + Aqua) ========= */
+header {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 6px 20px rgba(36, 121, 155, 0.12);
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 22px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #0f172a;
+  background: rgba(240, 253, 255, 0.8);
+  border: 1px solid rgba(147, 197, 253, 0.7);
+  transition: 0.25s;
+}
+
+header nav ul li a:hover {
+  background: #bae6fd;
+  box-shadow: 0 5px 18px rgba(56, 189, 248, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ========= MAIN CARD (Glass + Soft Glow) ========= */
+.page {
+  max-width: 960px;
+  width: 92%;
+  margin: 40px auto 56px;
+  padding: 32px 30px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border-radius: 28px;
+  box-shadow: 
+      0 25px 60px rgba(15, 23, 42, 0.12),
+      0 0 25px rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 28px;
+  align-items: center;
+
+  animation: fadeIn 0.8s ease-out;
+}
+
+@media (max-width: 768px) {
+  .page {
+    grid-template-columns: 1fr;
+    padding: 24px 22px;
+    margin-top: 28px;
+  }
+}
+
+/* ========= TEXT ========= */
+.page-text h1 {
+  margin: 0 0 12px;
+  font-size: 2.3rem;
+  color: #0f172a;
+}
+
+.page-text p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+.page-text h3 {
+  margin-top: 18px;
+  color: #0284c7;
+  font-size: 1.15rem;
+}
+
+/* ========= LIST ========= */
+.page-text ul {
+  margin: 6px 0 0 0;
+  padding-left: 18px;
+  color: #334155;
+}
+
+.page-text ul li {
+  margin-bottom: 6px;
+}
+
+/* ========= IMAGE ========= */
+.page-image {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-img {
+  max-width: 320px;
+  width: 100%;
+  border-radius: 26px;
+  object-fit: cover;
+  box-shadow: 0 18px 40px rgba(2, 132, 199, 0.25);
+  transition: 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 25px 55px rgba(2, 132, 199, 0.45);
+}
+
+/* ========= ANIMATIONS ========= */
+
+@keyframes aestheticBG {
+  0%   { background-position: 0% 0%; }
+  50%  { background-position: 80% 100%; }
+  100% { background-position: 0% 80%; }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
